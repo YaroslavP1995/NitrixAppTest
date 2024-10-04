@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/listVideoFragment">
+
+    <fragment
+        android:id="@+id/listVideoFragment"
+        android:name="com.yaroslav_pys.nitrixapp.presentation.ui.fragments.ListVideoFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/video_list_fragment">
+        <action
+            android:id="@+id/action_listVideoFragment_to_exo_fullscreen"
+            app:destination="@id/exo_fullscreen"
+            app:popUpToInclusive="false" >
+
+            <argument
+                android:name="videos"
+                app:argType="string"
+                android:defaultValue="1"
+                app:nullable="false" />
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/exo_fullscreen"
+        android:name="com.yaroslav_pys.nitrixapp.presentation.ui.fragments.SingleVideoFragment"
+        android:label="SingleVideoFragment"
+        tools:layout="@layout/video_list_fragment">
+
+        <argument
+            android:name="videos"
+            app:argType="string"
+            android:defaultValue="1"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>
